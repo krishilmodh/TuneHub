@@ -5,6 +5,7 @@ import { twMerge } from "tailwind-merge";
 import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
+import Button from "./Button";
 
 interface HeaderProps {
   children: React.ReactNode;
@@ -30,13 +31,14 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
     >
       <div
         className="
-      w-full
-      mb-4
-      flex
-      items-center
-      justify-between
+          w-full
+          mb-4
+          flex
+          items-center
+          justify-between
       "
       >
+        {/* PAGE NAVIGATION BACK AND FORWARD BUTTON */}
         <div
           className="
             hidden
@@ -72,7 +74,7 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
             <RxCaretRight size={35} />
           </button>
         </div>
-
+        {/* MOBILE VIEW HOME AND SEARCH BUTTON */}
         <div className="flex md:hidden gap-x-2 items-center">
           <button
             className="
@@ -103,7 +105,44 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
             <BiSearch className="text-black" size={20} />
           </button>
         </div>
+        {/* BUTTON Container*/}
+        <div
+          className=" 
+            flex 
+            justify-center 
+            items-center 
+            gap-x-4"
+        >
+          {/* Sign up and login button */}
+          <>
+            <div>
+              <Button
+                onClick={() => {}}
+                className="
+                bg-transparent
+                text-neutral-300
+                font-medium
+              "
+              >
+                Sign Up
+              </Button>
+            </div>
+            <div>
+              <Button
+                onClick={() => {}}
+                className="
+                bg-white
+                px-6
+                py-2
+              "
+              >
+                Log in
+              </Button>
+            </div>
+          </>
+        </div>
       </div>
+      {children }
     </div>
   );
 };
