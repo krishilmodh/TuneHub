@@ -1,5 +1,5 @@
+"use client"
 import { createContext, useContext, useEffect, useState } from "react";
-
 import { Subscription, UserDetails } from "@/types";
 import {
   User,
