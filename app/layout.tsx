@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: "Listen to music!",
 };
 
-export default function RootLayout({
+export default  function RootLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -21,12 +21,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <UserProvider>
-          <SupabaseProvider>
+        <SupabaseProvider>
+          <UserProvider>
             <ModalProvider />
             <Sidebar>{children}</Sidebar>
-          </SupabaseProvider>
-        </UserProvider>
+          </UserProvider>
+        </SupabaseProvider>
       </body>
     </html>
   );
