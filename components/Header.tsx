@@ -23,16 +23,15 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
   const router = useRouter();
   const supabaseClient = useSupabaseClient();
   const { user } = useUser();
-  console.log(user);
+
   const handleLogout = async () => {
     const { error } = await supabaseClient.auth.signOut();
     router.refresh();
 
     if (error) {
       toast.error(error.message);
-    }
-    else{
-      toast.success("Logged out!")
+    } else {
+      toast.success("Logged out!");
     }
   };
 
